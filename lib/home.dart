@@ -17,16 +17,22 @@ class _HomeState extends State<Home> {
   var textController = TextEditingController();
 
   void setupWorldCurrency() async {
-    WorldCurrency instance = WorldCurrency(
-        symbol: '$selectedCurrency', amount: '$amount', rates: '$currencyRate');
-    await instance.getData();
-    print(instance.rates);
-    setState(() {
-      currencyRate = instance.rates;
-      amount = textController.text;
-      total = instance.calculateConversion('$currencyRate', '$amount');
-      print(total);
-    });
+    try {
+      WorldCurrency instance = WorldCurrency(
+          symbol: '$selectedCurrency',
+          amount: '$amount',
+          rates: '$currencyRate');
+      await instance.getData();
+      print(instance.rates);
+      setState(() {
+        currencyRate = instance.rates;
+        amount = textController.text;
+        total = amount * currencyRate;
+        print(total);
+      });
+    } catch (e) {
+      print('$e');
+    }
   }
 
   @override
