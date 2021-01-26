@@ -2,10 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Splash extends StatefulWidget {
-//final int splashAnimationDuration;
-//final Widget navigateAfterSeconds;
 
-  // SplashScreen({this.splashAnimationDuration,this.navigateAfterSeconds});
   @override
   _SplashState createState() => _SplashState();
 }

@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:http/http.dart';
 
 class WorldCurrency {
@@ -18,14 +17,16 @@ class WorldCurrency {
       String symbols;
       //double amount=2;
 
-      Response fluctuationResponse = await get(
-          'http://data.fixer.io/api/$fluctuationEndpoint?access_key=$accessKey');
+      // Response fluctuationResponse = await get(
+      //     'http://data.fixer.io/api/$fluctuationEndpoint?access_key=$accessKey');
+
       Response specificLatestResponse = await get(
           'http://data.fixer.io/api/$latestEndpoint?access_key=$accessKey&symbols=$symbols');
-      Response latestResponse = await get(
-          'http://data.fixer.io/api/$latestEndpoint?access_key=$accessKey');
-      Response conversionResponse = await get(
-          'http://data.fixer.io/api/$convertEndpoint?access_key=$accessKey&from= EUR & to = USD & amount = 1 ');
+
+      // Response latestResponse = await get(
+      //     'http://data.fixer.io/api/$latestEndpoint?access_key=$accessKey');
+      // Response conversionResponse = await get(
+      //     'http://data.fixer.io/api/$convertEndpoint?access_key=$accessKey&from= EUR & to = USD & amount = 1 ');
 
       Map data = jsonDecode(specificLatestResponse.body);
       rates = data['rates'];
