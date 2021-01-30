@@ -67,7 +67,7 @@ class _SplashState extends State<Splash> {
                       semanticLabel: 'Continue',
                     ),
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context, '/home');
+                      Navigator.pushReplacementNamed(context, '/test');
                     },
                     iconSize: 100,
                     color: Colors.cyanAccent,
